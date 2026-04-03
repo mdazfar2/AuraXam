@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useMemo, useState } from 'react';
+import React, { createContext, useContext, useMemo, useState, useEffect } from 'react';
 
 const AuthContext = createContext(undefined);
 
@@ -31,43 +31,41 @@ const writeStoredUser = (user) => {
     } else {
       window.localStorage.removeItem(STORAGE_KEY);
     }
-  } catch {
-    // Ignore storage errors and continue with in-memory state.
-  }
+  } catch {}
 };
 
 export const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(() => readStoredUser());
   const [isLoading, setIsLoading] = useState(false);
 
-  const login = async (email, password) => {
-    setIsLoading(true);
+  // 🔥 HANDLE GOOGLE TOKEN
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    const token = params.get("token");
 
-    try {
-      await new Promise((resolve) => setTimeout(resolve, 350));
-
-      if (!email || !password || password.length < 6) {
-        return false;
-      }
-
-      const existingUser = readStoredUser();
-      const loggedInUser = existingUser ?? {
-        id: `user_${Date.now()}`,
-        email,
-        name: email.split('@')[0] || 'AuraXam User',
+    if (token) {
+      const newUser = {
+        id: `google_${Date.now()}`,
+        email: "google_user",
+        name: "Google User",
         avatar: '',
         joinDate: new Date().toISOString(),
         streak: 1,
-        totalXP: 120,
-        badges: starterBadges
+        totalXP: 0,
+        badges: starterBadges,
+        token
       };
 
-      setUser(loggedInUser);
-      writeStoredUser(loggedInUser);
-      return true;
-    } finally {
-      setIsLoading(false);
+      setUser(newUser);
+      writeStoredUser(newUser);
+
+      // साफ URL
+      window.history.replaceState({}, document.title, "/");
     }
+  }, []);
+
+  const login = async () => {
+    return false; // disabled (Google OAuth used)
   };
 
   const register = async (name, email, password) => {

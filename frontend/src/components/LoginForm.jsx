@@ -4,15 +4,12 @@ import { useAuth } from '../contexts/AuthContext';
 import { motion } from 'framer-motion';
 
 export const LoginForm = ({ onRouteChange }) => {
-  const { login, isLoading } = useAuth();
+  const { isLoading } = useAuth();
 
   const handleGoogleLogin = async () => {
-    // Simulating Google Auth Flow
     try {
-      const success = await login("google-auth"); 
-      if (success) {
-        onRouteChange('dashboard');
-      }
+      // 🔥 REAL GOOGLE OAUTH REDIRECT
+      window.location.href = "http://localhost:8000/auth/login";
     } catch (error) {
       console.error("Login failed", error);
     }
@@ -20,7 +17,6 @@ export const LoginForm = ({ onRouteChange }) => {
 
   return (
     <div className="relative min-h-[90vh] flex items-center justify-center px-4 overflow-hidden">
-      {/* Dynamic Background Elements */}
       <div className="absolute top-1/4 -left-20 w-72 h-72 bg-blue-500/20 rounded-full blur-[120px] animate-pulse" />
       <div className="absolute bottom-1/4 -right-20 w-72 h-72 bg-purple-500/20 rounded-full blur-[120px] animate-pulse" />
 
@@ -32,7 +28,6 @@ export const LoginForm = ({ onRouteChange }) => {
       >
         <div className="bg-white/70 dark:bg-gray-800/40 backdrop-blur-2xl p-10 rounded-[2.5rem] shadow-2xl border border-white/20 dark:border-gray-700/50 text-center">
           
-          {/* Animated Logo Section */}
           <div className="relative mx-auto w-20 h-20 mb-8">
             <motion.div 
               animate={{ rotate: 360 }}
@@ -52,7 +47,6 @@ export const LoginForm = ({ onRouteChange }) => {
           </p>
 
           <div className="space-y-4">
-            {/* Premium Google Button */}
             <motion.button
               whileHover={{ y: -4, scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
@@ -60,7 +54,6 @@ export const LoginForm = ({ onRouteChange }) => {
               disabled={isLoading}
               className="group w-full relative flex items-center justify-center py-4 px-6 bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-2xl shadow-sm hover:shadow-xl hover:border-blue-400 dark:hover:border-blue-500 transition-all duration-300"
             >
-              {/* Google Icon Wrapper */}
               <div className="absolute left-6 bg-white p-1.5 rounded-lg shadow-sm border border-gray-100">
                 <svg className="w-5 h-5" viewBox="0 0 24 24">
                   <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" />
@@ -83,7 +76,6 @@ export const LoginForm = ({ onRouteChange }) => {
               </motion.div>
             </motion.button>
 
-            {/* Micro-Copy */}
             <div className="pt-6 flex items-center justify-center space-x-6 text-[11px] font-bold text-gray-400 dark:text-gray-500 uppercase tracking-[0.2em]">
               <span className="flex items-center">
                 <Zap className="w-3 h-3 mr-1 fill-yellow-500 text-yellow-500" /> 
@@ -95,7 +87,6 @@ export const LoginForm = ({ onRouteChange }) => {
           </div>
         </div>
 
-        {/* Footer Attribution */}
         <div className="mt-8 text-center">
           <p className="text-xs text-gray-400 dark:text-gray-600 font-medium">
             Protected by AuraXam Guard &copy; 2026. All rights reserved.
