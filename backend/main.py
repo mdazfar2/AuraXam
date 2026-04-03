@@ -14,7 +14,7 @@ app.include_router(auth_router, prefix="/auth")
 
 @app.get("/")
 def root():
-    return {"message": "MongoDB Backend Running 🚀"}
+    return {"message": "XamAura Backend Running 🚀"}
 
 
 # python main.py se run karne ke liye
