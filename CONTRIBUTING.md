@@ -1,6 +1,6 @@
-# XamAura Contributing Guidelines
+# AuraXam Contributing Guidelines
 
-Welcome to the **XamAura** project! We're excited to have you here. Whether you're a seasoned developer or just getting started, your contributions are valuable and appreciated.
+Welcome to the **AuraXam** project! We're excited to have you here. Whether you're a seasoned developer or just getting started, your contributions are valuable and appreciated.
 
 
 Please take a moment to read the following guidelines before contributing:
@@ -30,7 +30,7 @@ Please take a moment to read the following guidelines before contributing:
 
 ## How to contribute
 
-To get started, look at the existing [**create a new issue**](https://github.com/mdazfar2/XamAura/issues)!
+To get started, look at the existing [**create a new issue**](https://github.com/mdazfar2/AuraXam/issues)!
 
 ### Set up guildines
 
@@ -42,8 +42,6 @@ To get started, look at the existing [**create a new issue**](https://github.com
 > Make sure to restart your PC/Laptop after installation before proceeding to the next step.
 
 
-***Actually, our website is currently built using only React and Tailwind CSS. In the future, we will incorporate the full MERN stack, including MongoDB, Node.js, and Express.js, along with payment integration. So, if possible, you can raise an issue on that if you want to work on it.***
-
 ## 🚀 Run the Project Locally
 
 To run the project locally and start contributing:
@@ -51,7 +49,7 @@ To run the project locally and start contributing:
 - Clone the repo
 
 ```bash
-git clone https://github.com/your-username/XamAura.git
+git clone https://github.com/your-username/AuraXam.git
 ```
 - Navigate to the frontend directory
 
@@ -71,6 +69,39 @@ npm run dev
 ```
 
   - `Open http://localhost:5173 with your browser to see the result.`
+
+## Now Instruction for Backend
+
+1. **Install Dependencies**
+   ```bash
+   cd backend
+   ```
+   ```bash
+   python -m venv .venv
+   ```
+   ```bash
+   .\.venv\Scripts\activate
+   ```
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+2. **Configure Environment Variables**
+   - Copy `.env.example` to `.env`
+
+
+   - Configure [Google OAuth](https://www.youtube.com/watch?v=-vq32dsK_TI): `GOOGLE_CLIENT_ID`, `GOOGLE_CLIENT_SECRET`, `GOOGLE_REDIRECT_URI`
+
+   **Note**: For Gmail App Password: [Create App Pass](https://github.com/azfar-2/myself/blob/main/gmail_app_password.md).
+   - Use that password in `.env`
+
+
+   4. **Start the Backend Server**
+   ```bash
+   python app.py
+   ```
+
+   Backend Server will run on `http://localhost:8000`
 
 
 - Create a new branch to make your changes.
