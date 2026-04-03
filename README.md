@@ -8,7 +8,7 @@ It bridges the gap between **knowledge and real exam performance** using smart a
 ---
 
 ## 👩‍💻 Live Demo  
-Visit 👉 https://your-auraxam-link.vercel.app to explore the platform!
+Visit 👉 https://auraxam.vercel.app to explore the platform!
 
 ---
 
