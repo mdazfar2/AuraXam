@@ -3,6 +3,7 @@ from authlib.integrations.starlette_client import OAuth
 from dotenv import load_dotenv
 import os
 from fastapi.responses import RedirectResponse
+from database import users_collection   # ✅ ADD THIS
 
 load_dotenv()
 
@@ -36,6 +37,19 @@ async def auth_callback(request: Request):
     name = user["name"]
     email = user["email"]
     picture = user["picture"]
+
+   
+    existing_user = users_collection.find_one({"email": email})
+
+    if not existing_user:
+        users_collection.insert_one({
+            "name": name,
+            "email": email,
+            "picture": picture
+        })
+        print("✅ New user saved:", email)
+    else:
+        print("⚡ User already exists:", email)
 
     # ✅ REDIRECT TO FRONTEND WITH DATA
     redirect_url = f"{FRONTEND_URL}/?name={name}&email={email}&picture={picture}"
