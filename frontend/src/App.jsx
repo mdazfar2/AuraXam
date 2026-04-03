@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { AuthProvider } from './contexts/AuthContext';
 import { ThemeProvider } from './contexts/ThemeContext';
 import { Header } from './components/Header';
+import { Footer } from './components/Footer';
 import { Dashboard } from './components/Dashboard';
 import { ExamConfig } from './components/ExamConfig';
 import { LoginForm } from './components/LoginForm';
@@ -61,13 +62,13 @@ const AppContent = () => {
 
   if (!user) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-blue-50 to-purple-50 dark:from-gray-900 dark:to-gray-800">
+      <div className="min-h-screen flex flex-col bg-gradient-to-br from-blue-50 to-purple-50 dark:from-gray-900 dark:to-gray-800">
         <Header 
           currentRoute={currentRoute} 
           onRouteChange={handleRouteChange}
         />
         
-        <main className="pt-16">
+        <main className="pt-16 flex-grow">
           {currentRoute === 'login' && (
             <LoginForm onRouteChange={handleRouteChange} />
           )}
@@ -78,12 +79,14 @@ const AppContent = () => {
             <LoginForm onRouteChange={handleRouteChange} />
           )}
         </main>
+        
+        <Footer />
       </div>
     );
   }
 
   return (
-    <div className="min-h-screen bg-gray-50 dark:bg-gray-900">
+    <div className="min-h-screen flex flex-col bg-gray-50 dark:bg-gray-900">
       <Header 
         currentRoute={currentRoute} 
         onRouteChange={handleRouteChange}
@@ -113,7 +116,7 @@ const AppContent = () => {
         </div>
       )}
       
-      <main className="pt-16">
+      <main className="pt-16 flex-grow">
         {currentRoute === 'dashboard' && (
           <Dashboard onRouteChange={handleRouteChange} />
         )}
@@ -125,6 +128,8 @@ const AppContent = () => {
           />
         )}
       </main>
+      
+      <Footer />
     </div>
   );
 };

@@ -158,7 +158,7 @@ export const Footer = () => {
               <span>&copy; {currentYear} AuraXam Elite. All rights reserved.</span>
               <span>Made with</span>
               <Heart className="w-4 h-4 text-red-500 fill-current" />
-              <span>by Team AuraXam</span>
+              <span>by Azfar Alam</span>
             </p>
           </div>
 
