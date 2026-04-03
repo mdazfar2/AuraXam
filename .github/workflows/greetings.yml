@@ -12,47 +12,11 @@ on:
 jobs:
   welcome:
     runs-on: ubuntu-latest
-
     steps:
       - uses: actions/checkout@v4
-
-      - name: Welcome New Contributors
-        uses: EddieHubCommunity/gh-action-community/src/welcome@main
+      - uses: EddieHubCommunity/gh-action-community/src/welcome@main
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
-
-          issue-message: |
-            **Hey, @${{ github.actor }}! 👋**
-
-            Thank you for opening an issue in **AuraXam** 🚀  
-
-            We truly appreciate your effort in helping us improve the platform 💙  
-
-            ### 🔍 What you can do next:
-            - Make sure your issue is well described  
-            - Add screenshots or examples if possible  
-            - Check if similar issues already exist  
-
-            ### 💡 Explore AuraXam:
-            - Contribute to AI, Analytics, or Exam Engine features  
-            - Improve UI/UX or suggest new ideas  
-
-            ⭐ Don't forget to star the repo:  
-            👉 https://github.com/mdazfar2/AuraXam  
-
-            Happy Contributing! 🎯  
-
-          pr-message: |
-            **Hey, @${{ github.actor }}! 🎉**
-
-            Thank you for your Pull Request to **AuraXam** 🚀  
-
-            Your contribution means a lot to us 💙  
-            A maintainer will review your PR soon.
-
-            ### ✅ While you wait:
-            - Ensure your code follows project guidelines  
-            - Check for merge conflicts  
-            - Add proper description in your PR  
-
-            Keep building & contributing! 🔥
+          issue-message: "**Hey, ${{ github.actor }}!** 👋 Thank you for opening an issue in **AuraXam**!\n\n- We really appreciate your feedback and suggestions. 💡\n- Feel free to explore the project or suggest new ideas.\n- ⭐ Don't forget to star the [repo](https://github.com/mdazfar2/AuraXam))!\n\nThanks for being part of AuraXam! 🚀"
+          
+          pr-message: "Hey, ${{ github.actor }}! 🎉\n\nThanks for your pull request to **AuraXam**.\nA maintainer will review it soon.\nWe appreciate your contribution to improving the project! 🙌"
