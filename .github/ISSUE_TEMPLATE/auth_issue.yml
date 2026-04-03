@@ -1,0 +1,96 @@
+name: 🔐 Authentication Issue
+description: Report issues related to login, Google OAuth, or user sessions.
+title: '[AUTH] '
+labels: ["auth"]
+body:
+  - type: textarea
+    attributes:
+      label: Description
+      id: description
+      description: Describe the authentication issue you are facing.
+    validations:
+      required: true
+
+  - type: dropdown
+    id: auth_type
+    attributes:
+      label: Type of Authentication Issue
+      options:
+        - Google Login Failed
+        - Redirect Issue
+        - Session Expired Automatically
+        - Logout Issue
+        - Multiple Account Issue
+        - Other
+    validations:
+      required: true
+
+  - type: textarea
+    attributes:
+      label: Steps to Reproduce
+      id: steps
+      description: Step-by-step process to reproduce the issue.
+    validations:
+      required: true
+
+  - type: textarea
+    attributes:
+      label: Expected Behavior
+      id: expected
+      description: What should have happened?
+    validations:
+      required: true
+
+  - type: textarea
+    attributes:
+      label: Actual Behavior
+      id: actual
+      description: What actually happened?
+    validations:
+      required: true
+
+  - type: textarea
+    attributes:
+      label: Screenshots / Error Messages
+      id: screenshots
+      description: Add screenshots or error messages if available.
+    validations:
+      required: false
+
+  - type: dropdown
+    id: browsers
+    attributes:
+      label: Browser / Environment
+      multiple: true
+      options:
+        - Chrome
+        - Firefox
+        - Safari
+        - Microsoft Edge
+        - Brave
+        - Mobile Device
+        - Not browser-related (API/Backend)
+    validations:
+      required: false
+
+  - type: textarea
+    attributes:
+      label: Any additional information?
+      id: extrainfo
+      description: Anything else we should know?
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: checklist
+    attributes:
+      label: ✅ Checklist
+      options:
+        - label: I have checked the existing issues.
+          required: true
+
+        - label: I have read the [Contributing Guidelines](https://github.com/mdazfar2/AuraXam/blob/main/CONTRIBUTING.md)
+          required: true
+
+        - label: I am willing to work on this issue (optional).
+          required: false

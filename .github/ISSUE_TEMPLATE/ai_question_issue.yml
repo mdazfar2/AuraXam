@@ -1,0 +1,80 @@
+name: 🧠 AI Question Generation Issue
+description: Report issues related to AI-based question generation, difficulty, or relevance.
+title: '[AI ISSUE] '
+labels: ["ai"]
+body:
+  - type: textarea
+    attributes:
+      label: Description
+      id: description
+      description: Describe the issue with AI question generation. What went wrong?
+    validations:
+      required: true
+
+  - type: textarea
+    attributes:
+      label: Input Provided
+      id: input
+      description: What input did you give? (e.g., PDF upload, subject name, topic, etc.)
+    validations:
+      required: true
+
+  - type: textarea
+    attributes:
+      label: Expected Behavior
+      id: expected
+      description: What kind of questions or output were you expecting?
+    validations:
+      required: true
+
+  - type: textarea
+    attributes:
+      label: Actual Output
+      id: actual
+      description: What did the AI actually generate?
+    validations:
+      required: true
+
+  - type: dropdown
+    id: issue_type
+    attributes:
+      label: Type of AI Issue
+      options:
+        - Incorrect Questions
+        - Irrelevant Questions
+        - Difficulty Mismatch
+        - Repeated Questions
+        - Incomplete Output
+        - Other
+    validations:
+      required: true
+
+  - type: textarea
+    attributes:
+      label: Screenshots / Examples
+      id: screenshots
+      description: Add screenshots or examples of the generated questions.
+    validations:
+      required: false
+
+  - type: textarea
+    attributes:
+      label: Any additional information?
+      id: extrainfo
+      description: Anything else we should know?
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: checklist
+    attributes:
+      label: ✅ Checklist
+      options:
+        - label: I have checked the existing issues.
+          required: true
+
+        - label: I have read the [Contributing Guidelines](https://github.com/mdazfar2/AuraXam/blob/main/CONTRIBUTING.md)
+          required: true
+
+        - label: I am willing to work on this issue (optional).
+          required: false

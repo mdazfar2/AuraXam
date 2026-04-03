@@ -1,0 +1,88 @@
+name: ⚙️ Exam Engine Issue
+description: Report issues related to exam logic, scoring system, or evaluation.
+title: '[EXAM ENGINE] '
+labels: ["exam-engine"]
+body:
+  - type: textarea
+    attributes:
+      label: Description
+      id: description
+      description: Describe the issue related to exam logic or scoring.
+    validations:
+      required: true
+
+  - type: textarea
+    attributes:
+      label: Question Type
+      id: question_type
+      description: Specify the type of question (e.g., MCQ, MSQ, Numerical, Fill in the blanks).
+    validations:
+      required: true
+
+  - type: textarea
+    attributes:
+      label: Your Answer
+      id: user_answer
+      description: What answer did you select or enter?
+    validations:
+      required: true
+
+  - type: textarea
+    attributes:
+      label: Expected Result
+      id: expected
+      description: What should have been the correct evaluation or score?
+    validations:
+      required: true
+
+  - type: textarea
+    attributes:
+      label: Actual Result
+      id: actual
+      description: What result or score did you actually get?
+    validations:
+      required: true
+
+  - type: dropdown
+    id: issue_type
+    attributes:
+      label: Type of Issue
+      options:
+        - MSQ Evaluation Issue
+        - Negative Marking Issue
+        - Score Calculation Error
+        - Result Mismatch
+        - Time Limit Issue
+        - Other
+    validations:
+      required: true
+
+  - type: textarea
+    attributes:
+      label: Screenshots / Examples
+      id: screenshots
+      description: Add screenshots or examples to explain the issue better.
+    validations:
+      required: false
+
+  - type: textarea
+    attributes:
+      label: Any additional information?
+      id: extrainfo
+      description: Anything else we should know?
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: checklist
+    attributes:
+      label: ✅ Checklist
+      options:
+        - label: I have checked the existing issues.
+          required: true
+
+        - label: I have read the [Contributing Guidelines](https://github.com/mdazfar2/AuraXam/blob/main/CONTRIBUTING.md)
+          required: true
+
+        - label: I am willing to work on this issue (optional).
+          required: false

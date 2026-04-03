@@ -1,0 +1,73 @@
+name: 📊 Analytics Improvement
+description: Suggest improvements or report issues related to performance analytics and insights.
+title: '[ANALYTICS] '
+labels: ["analytics"]
+body:
+  - type: textarea
+    attributes:
+      label: Description
+      id: description
+      description: Describe the issue or improvement related to analytics.
+    validations:
+      required: true
+
+  - type: textarea
+    attributes:
+      label: Current Behavior
+      id: current
+      description: What is currently happening in the analytics section?
+    validations:
+      required: true
+
+  - type: textarea
+    attributes:
+      label: Expected Improvement
+      id: expected
+      description: What improvement or feature would you like to see?
+    validations:
+      required: true
+
+  - type: dropdown
+    id: analytics_type
+    attributes:
+      label: Type of Analytics Issue / Improvement
+      options:
+        - Incorrect Data
+        - Missing Insights
+        - Graph / Chart Issue
+        - Time Tracking Issue
+        - Accuracy vs Speed Analysis
+        - UI/UX Improvement
+        - Other
+    validations:
+      required: true
+
+  - type: textarea
+    attributes:
+      label: Screenshots / Examples
+      id: screenshots
+      description: Add screenshots or examples to explain better.
+    validations:
+      required: false
+
+  - type: textarea
+    attributes:
+      label: Any additional information?
+      id: extrainfo
+      description: Anything else we should know?
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: checklist
+    attributes:
+      label: ✅ Checklist
+      options:
+        - label: I have checked the existing issues.
+          required: true
+
+        - label: I have read the [Contributing Guidelines](https://github.com/mdazfar2/AuraXam/blob/main/CONTRIBUTING.md)
+          required: true
+
+        - label: I am willing to work on this issue (optional).
+          required: false
