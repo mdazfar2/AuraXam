@@ -1,23 +1,27 @@
 from fastapi import FastAPI
-from auth import router as auth_router
 from starlette.middleware.sessions import SessionMiddleware
+from auth import router as auth_router
+from dotenv import load_dotenv
+import os
+import uvicorn
+
+# ✅ Load .env
+load_dotenv()
 
 app = FastAPI()
 
-# 🔥 ADD THIS (MANDATORY FOR GOOGLE OAUTH)
-app.add_middleware(
-    SessionMiddleware,
-    secret_key="supersecretkey"  # same as .env SECRET_KEY rakh sakte ho
-)
+# ✅ Secret key from .env
+SECRET_KEY = os.getenv("SECRET_KEY")
 
-app.include_router(auth_router, prefix="/auth")
+app.add_middleware(SessionMiddleware, secret_key=SECRET_KEY)
+
+app.include_router(auth_router)
+
 
 @app.get("/")
-def root():
-    return {"message": "XamAura Backend Running 🚀"}
+def home():
+    return {"message": "Backend running"}
 
 
-# python main.py se run karne ke liye
 if __name__ == "__main__":
-    import uvicorn
     uvicorn.run("main:app", host="127.0.0.1", port=8000, reload=True)

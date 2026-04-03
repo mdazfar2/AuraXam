@@ -4,12 +4,12 @@ import { useAuth } from '../contexts/AuthContext';
 import { motion } from 'framer-motion';
 
 export const LoginForm = ({ onRouteChange }) => {
-  const { isLoading } = useAuth();
+  const { isLoading, login } = useAuth();
 
   const handleGoogleLogin = async () => {
     try {
-      // 🔥 REAL GOOGLE OAUTH REDIRECT
-      window.location.href = "http://localhost:8000/auth/login";
+      // 🔥 Backend OAuth redirect
+      await login();
     } catch (error) {
       console.error("Login failed", error);
     }

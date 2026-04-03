@@ -36,65 +36,42 @@ const writeStoredUser = (user) => {
 
 export const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(() => readStoredUser());
-  const [isLoading, setIsLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
 
-  // 🔥 HANDLE GOOGLE TOKEN
+  // 🔥 HANDLE GOOGLE REDIRECT DATA (MAIN FIX)
   useEffect(() => {
     const params = new URLSearchParams(window.location.search);
-    const token = params.get("token");
 
-    if (token) {
-      const newUser = {
-        id: `google_${Date.now()}`,
-        email: "google_user",
-        name: "Google User",
-        avatar: '',
-        joinDate: new Date().toISOString(),
-        streak: 1,
-        totalXP: 0,
-        badges: starterBadges,
-        token
-      };
+    const name = params.get("name");
+    const email = params.get("email");
+    const picture = params.get("picture");
 
-      setUser(newUser);
-      writeStoredUser(newUser);
-
-      // साफ URL
-      window.history.replaceState({}, document.title, "/");
-    }
-  }, []);
-
-  const login = async () => {
-    return false; // disabled (Google OAuth used)
-  };
-
-  const register = async (name, email, password) => {
-    setIsLoading(true);
-
-    try {
-      await new Promise((resolve) => setTimeout(resolve, 450));
-
-      if (!name || !email || !password || password.length < 6) {
-        return false;
-      }
-
-      const newUser = {
+    // ✅ If coming from Google login
+    if (name && email) {
+      const loggedInUser = {
         id: `user_${Date.now()}`,
         email,
         name,
-        avatar: '',
+        avatar: picture,
         joinDate: new Date().toISOString(),
         streak: 1,
-        totalXP: 0,
+        totalXP: 120,
         badges: starterBadges
       };
 
-      setUser(newUser);
-      writeStoredUser(newUser);
-      return true;
-    } finally {
-      setIsLoading(false);
+      setUser(loggedInUser);
+      writeStoredUser(loggedInUser);
+
+      // ✅ Clean URL (IMPORTANT)
+      window.history.replaceState({}, document.title, "/");
     }
+
+    setIsLoading(false);
+  }, []);
+
+  // ✅ GOOGLE LOGIN
+  const login = async () => {
+    window.location.href = "http://localhost:8000/auth/login";
   };
 
   const logout = () => {
@@ -107,7 +84,6 @@ export const AuthProvider = ({ children }) => {
       user,
       isLoading,
       login,
-      register,
       logout
     }),
     [user, isLoading]

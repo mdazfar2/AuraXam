@@ -1,54 +1,43 @@
-import os
 from fastapi import APIRouter, Request
 from authlib.integrations.starlette_client import OAuth
 from dotenv import load_dotenv
+import os
 from fastapi.responses import RedirectResponse
-from jose import jwt
-from database import users_collection
 
 load_dotenv()
 
-router = APIRouter()
+router = APIRouter(prefix="/auth", tags=["Auth"])
+
+GOOGLE_CLIENT_ID = os.getenv("GOOGLE_CLIENT_ID")
+GOOGLE_CLIENT_SECRET = os.getenv("GOOGLE_CLIENT_SECRET")
+FRONTEND_URL = os.getenv("FRONTEND_URL")
 
 oauth = OAuth()
 
 oauth.register(
-    name='google',
-    client_id=os.getenv("GOOGLE_CLIENT_ID"),
-    client_secret=os.getenv("GOOGLE_CLIENT_SECRET"),
-    server_metadata_url='https://accounts.google.com/.well-known/openid-configuration',
-    client_kwargs={'scope': 'openid email profile'}
+    name="google",
+    client_id=GOOGLE_CLIENT_ID,
+    client_secret=GOOGLE_CLIENT_SECRET,
+    server_metadata_url="https://accounts.google.com/.well-known/openid-configuration",
+    client_kwargs={"scope": "openid email profile"},
 )
-
-SECRET_KEY = os.getenv("SECRET_KEY")
-FRONTEND_URL = os.getenv("FRONTEND_URL")
-
 
 @router.get("/login")
 async def login(request: Request):
-    redirect_uri = request.url_for('auth_callback')
+    redirect_uri = "http://localhost:8000/auth/callback"
     return await oauth.google.authorize_redirect(request, redirect_uri)
 
 
 @router.get("/callback")
 async def auth_callback(request: Request):
     token = await oauth.google.authorize_access_token(request)
-    user_info = token.get("userinfo")
+    user = token.get("userinfo")
 
-    email = user_info["email"]
-    name = user_info["name"]
-    picture = user_info["picture"]
+    name = user["name"]
+    email = user["email"]
+    picture = user["picture"]
 
-    # 🔥 MongoDB me check
-    user = users_collection.find_one({"email": email})
+    # ✅ REDIRECT TO FRONTEND WITH DATA
+    redirect_url = f"{FRONTEND_URL}/?name={name}&email={email}&picture={picture}"
 
-    if not user:
-        users_collection.insert_one({
-            "email": email,
-            "name": name,
-            "picture": picture
-        })
-
-    jwt_token = jwt.encode({"email": email}, SECRET_KEY, algorithm="HS256")
-
-    return RedirectResponse(f"{FRONTEND_URL}/?token={jwt_token}")
+    return RedirectResponse(url=redirect_url)
