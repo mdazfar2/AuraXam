@@ -25,8 +25,8 @@ Please take a moment to read the following guidelines before contributing:
 
 ## 📁 Project Structure
 
-- `frontend/` – Contains all the code related to the user interface and website design.  
-- `backend/` – This folder will be added later to handle all server-side logic (e.g., user registration, payments, admin panel, etc.).
+- `frontend/` – React-based user interface with Tailwind CSS and modern component architecture. Handles authentication, exam management, and analytics.
+- `backend/` – Python Flask REST API server handling OAuth authentication (Google), MongoDB database operations, and exam processing. Includes JWT token management and secure CORS configuration.
 
 ## How to contribute
 
@@ -36,10 +36,19 @@ To get started, look at the existing [**create a new issue**](https://github.com
 
 
 > [!NOTE]
-> This is [MERN Stack](https://www.geeksforgeeks.org/mern-stack/) project.
-> You must have installed Node.js on your local macahine. If you don't have it installed yet,                                                             
-  We will recommend a video for you that you can view from [here](https://www.youtube.com/watch?v=8UwTd15dK-E).
-> Make sure to restart your PC/Laptop after installation before proceeding to the next step.
+> This is a **Flask + React** project (Not MERN).
+> 
+> **Frontend Requirements:**
+> - Node.js 16+ installed on your local machine
+> - If you don't have it, install from [nodejs.org](https://nodejs.org/)
+> - Video guide: [Install Node.js](https://www.youtube.com/watch?v=8UwTd15dK-E)
+>
+> **Backend Requirements:**
+> - Python 3.8+ installed on your system
+> - If new to Python, install from [python.org](https://www.python.org/downloads/)
+> - Virtual environment (venv) for dependency isolation
+>
+> Make sure to restart your PC/Laptop after installation before proceeding.
 
 
 ## 🚀 Run the Project Locally
@@ -117,27 +126,92 @@ npm run dev
 - Track and stage your changes.
 
 ```bash
-   # Track the changes
-   git status
+# Check what changed
+git status
 
-   # Add changes to Index
-   git add .
+# Add files to staging
+git add .
 ```
 
-- Commit your changes.
-
+### 4. **Commit Your Changes**
 ```bash
-   git commit -m "your_commit_message"
+git commit -m "Descriptive commit message"
+# Example: "feat: Add Google OAuth login functionality"
+# Example: "fix: Resolve Database connection issue"
 ```
-- Push your committed changes to the remote repo.
 
+### 5. **Push to Your Fork**
 ```bash
-   git push origin <your_branch_name>
+git push origin feature/your-feature-name
 ```
 
-- Go to your forked repository on GitHub and click on `Compare & pull request`.
+### 6. **Create a Pull Request**
+- Go to your forked repository on GitHub
+- Click "Compare & pull request"
+- Add a descriptive title and description:
+  - **What**: What changes did you make?
+  - **Why**: Why are these changes needed?
+  - **How**: How did you implement the solution?
+- Link any related issues (e.g., "Fixes #123")
+- Review your changes once more before submitting
 
-- Add an appropriate title and description to your pull request explaining your changes and efforts done.
+### 7. **Code Review Process**
+- Maintainers will review your PR
+- Make requested changes if needed
+- Once approved, your PR will be merged
+
+---
+
+## 📝 Commit Message Guidelines
+
+Use clear and descriptive commit messages:
+
+```
+feat: Add new feature
+fix: Fix a bug
+docs: Update documentation
+style: Code style changes (formatting, semicolons, etc.)
+refactor: Refactor code without changing functionality
+test: Add or update tests
+chore: Update dependencies, build scripts, etc.
+```
+
+Example:
+```bash
+git commit -m "feat: Implement user profile page with OAuth integration"
+```
+
+---
+
+## 🐛 Reporting Issues
+
+Found a bug or have a feature request?
+
+1. Check [existing issues](https://github.com/mdazfar2/AuraXam/issues) to avoid duplicates
+2. Click "New Issue"
+3. Provide:
+   - Clear title
+   - Detailed description
+   - Steps to reproduce (for bugs)
+   - Expected vs actual behavior
+   - Screenshots if applicable
+
+---
+
+## ❓ Need Help?
+
+- Check the [Project README](README.md)
+- Read existing [Issues](https://github.com/mdazfar2/AuraXam/issues)
+- Check [Discussions](https://github.com/mdazfar2/AuraXam/discussions)
+- Reach out to maintainers in assigned issues
+
+---
+
+## 🙏 Thank You
+
+Thank you for contributing to AuraXam! Your efforts help make this project better for everyone. We appreciate all contributions, no matter how big or small!
+
+**Happy Coding! 🚀**
 
 - Click on `Create pull request`.
 
