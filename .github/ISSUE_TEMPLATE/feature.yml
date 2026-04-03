@@ -1,0 +1,40 @@
+name: 🚀 Feature Request
+description: Suggest a new feature or enhancement for AuraXam.
+title: '[Feature] '
+labels: ["feature", "enhancement"]
+body:
+  - type: textarea
+    attributes:
+      label: Feature Description
+      id: feature-description
+      description: Clearly explain the feature you'd like to see implemented. What should it do?
+    validations:
+      required: true
+
+  - type: textarea
+    attributes:
+      label: Purpose / Use Case
+      id: feature-purpose
+      description: Why is this feature important? How does it benefit users or improve the platform?
+    validations:
+      required: true
+
+  - type: textarea
+    attributes:
+      label: Additional Details or Examples or Screenshots/Recordings
+      id: additional-details
+      description: Include any relevant examples, use cases, or references to help understand your request better.
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: checklist
+    attributes:
+      label: ✅ Checklist
+      options:
+        - label: I have checked the existing issues to avoid duplicates.
+          required: true
+        - label: I have read the [Contributing Guidelines](https://github.com/mdazfar2/AuraXam/blob/main/CONTRIBUTING.md).
+          required: true
+        - label: I am willing to work on this feature (optional).
+          required: false

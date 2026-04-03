@@ -1,0 +1,57 @@
+name: 🐞 Bug Report
+description: Report an issue to help us improve the AuraXam experience.
+title: '[BUG] '
+labels: ["bug"]
+body:
+  - type: textarea
+    attributes:
+      label: Description
+      id: description
+      description: A brief description of the issue or bug you are facing. Mention what you tried and what didn’t work.
+    validations:
+      required: true
+
+  - type: textarea
+    attributes:
+      label: Screenshots
+      id: screenshots
+      description: Please add relevant screenshots to help us understand the issue better.
+    validations:
+      required: false
+
+  - type: textarea
+    attributes:
+      label: Any additional information?
+      id: extrainfo
+      description: Is there anything else we should know about this bug?
+    validations:
+      required: false
+
+  - type: dropdown
+    id: browsers
+    attributes:
+      label: What browser are you seeing the problem on?
+      multiple: true
+      options:
+        - Firefox
+        - Chrome
+        - Safari
+        - Microsoft Edge
+        - Brave
+        - Not browser-related (for backend or API)
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: checklist
+    attributes:
+      label: ✅ Checklist
+      options:
+        - label: I have checked the existing issues.
+          required: true
+
+        - label: I have read the [Contributing Guidelines](https://github.com/mdazfar2/AuraXam/blob/main/CONTRIBUTING.md)
+          required: true
+
+        - label: I am willing to work on this issue (optional).
+          required: false

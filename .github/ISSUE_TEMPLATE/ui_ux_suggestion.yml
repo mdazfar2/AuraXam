@@ -1,0 +1,40 @@
+name: 🎨 UI/UX Suggestion
+description: Suggest improvements for the user interface or user experience.
+title: '[UI/UX] '
+labels: ["ui/ux", "enhancement"]
+body:
+  - type: textarea
+    attributes:
+      label: Suggestion Overview
+      id: suggestion-overview
+      description: Clearly explain your UI/UX improvement suggestion. What should be improved, changed, or redesigned?
+    validations:
+      required: true
+
+  - type: textarea
+    attributes:
+      label: Benefit to Users
+      id: benefit
+      description: How will this suggestion improve the overall user experience?
+    validations:
+      required: true
+
+  - type: textarea
+    attributes:
+      label: Visual References (Screenshots / Recordings)
+      id: visual-references
+      description: Upload screenshots, mockups, or screen recordings to help us better understand your suggestion.
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: checklist
+    attributes:
+      label: ✅ Checklist
+      options:
+        - label: I have checked the existing issues to avoid duplicates.
+          required: true
+        - label: I have read the [Contributing Guidelines](https://github.com/mdazfar2/AuraXam/blob/main/CONTRIBUTING.md).
+          required: true
+        - label: I am willing to work on this enhancement (optional).
+          required: false
