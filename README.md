@@ -10,8 +10,7 @@ With smart evaluation, customizable marking schemes, and deep performance insigh
 ---
 
 ## 👩‍💻 Live Demo  
-Visit 👉 https://auraxam.vercel.app to explore the platform!
-
+We're finalizing deployment and will share the link soon! 😊
 ---
 
 ## 🚀 Features  
