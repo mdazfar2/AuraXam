@@ -92,6 +92,22 @@ export const LoginForm = ({ onRouteChange }) => {
             Protected by AuraXam Guard &copy; 2026. All rights reserved.
           </p>
         </div>
+
+       {/* Azfar Alam Credit - Clean Elite Version */}
+<div className="mt-6 flex justify-center">
+  <p className="text-[11px] tracking-widest uppercase text-gray-400 dark:text-gray-600">
+    Crafted with ✨ by{" "}
+    <a
+      href="https://github.com/mdazfar2"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="font-semibold text-blue-600 dark:text-blue-400 hover:opacity-80 transition-all duration-300"
+    >
+      Azfar Alam
+    </a>
+  </p>
+</div>
+
       </motion.div>
     </div>
   );
