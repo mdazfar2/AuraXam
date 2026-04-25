@@ -1,43 +1,65 @@
 <img width="1811" height="509" alt="auraexam" src="https://github.com/user-attachments/assets/f531faff-0b50-4f2c-8d84-a0f2eedddc2e" />
 
+
+<div align="center">
+<p>
+  
+[![Open Source Love svg1](https://badges.frapsoft.com/os/v1/open-source.svg?v=103)](https://github.com/ellerbrock/open-source-badges/)
+![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat)
+![Visitors](https://api.visitorbadge.io/api/visitors?path=mdazfar2%2FAuraXam%20&countColor=%23263759&style=flat)
+![GitHub forks](https://img.shields.io/github/forks/mdazfar2/AuraXam)
+![GitHub Repo stars](https://img.shields.io/github/stars/mdazfar2/AuraXam)
+![GitHub contributors](https://img.shields.io/github/contributors/mdazfar2/AuraXam)
+![GitHub last commit](https://img.shields.io/github/last-commit/mdazfar2/AuraXam)
+![GitHub repo size](https://img.shields.io/github/repo-size/mdazfar2/AuraXam)
+![GitHub total lines](https://sloc.xyz/github/mdazfar2/AuraXam)
+![Github](https://img.shields.io/github/license/mdazfar2/AuraXam)
+![GitHub issues](https://img.shields.io/github/issues/mdazfar2/AuraXam)
+![GitHub closed issues](https://img.shields.io/github/issues-closed-raw/mdazfar2/AuraXam)
+![GitHub pull requests](https://img.shields.io/github/issues-pr/mdazfar2/AuraXam)
+![GitHub closed pull requests](https://img.shields.io/github/issues-pr-closed/mdazfar2/AuraXam)
+</p>
+</div>
+
+
+
+
 # Welcome to AuraXam 👋  
 
-**AuraXam** is an Intelligence-Driven Examination Suite designed to transform the way students prepare for exams.  
-It bridges the gap between **knowledge and real exam performance** using smart analytics, precision scoring, and a seamless user experience.  
+**AuraXam** is an AI-powered examination platform that lets you turn real exam papers (PYQs/PDFs) into a **live exam experience**.  
+Upload questions from exams like **JEE, NEET, GATE, UPSC**, and practice in an environment that feels exactly like the real test.  
+With smart evaluation, customizable marking schemes, and deep performance insights, AuraXam helps you **practice smarter and perform better on exam day**.
+
 
 ---
 
 ## 👩‍💻 Live Demo  
-Visit 👉 https://auraxam.vercel.app to explore the platform!
-
+We're finalizing deployment and will share the link soon! 😊
 ---
 
 ## 🚀 Features  
 
-### 🔐 Authentication System  
-- Google SSO Login for fast and secure access  
-- Single identity for tracking exams and progress  
-- Smooth onboarding experience  
+### 🎯 Real Exam Simulation with AI  
+- Upload your **PYQs or question papers (PDF)** from exams like **JEE, NEET, GATE, UPSC, etc.**  
+- Our **AI/ML engine scans and converts them into a real exam interface**  
+- Experience exactly like giving an actual competitive exam  
 
-### ⚙️ Intelligent Exam Configuration  
-- Generate exams using **PDF uploads or subject selection**  
-- Customizable rules:
-  - Negative marking  
-  - Time limits  
-  - Marking scheme  
-- Difficulty levels: Easy | Medium | Hard  
+### ⚙️ Custom Exam Control  
+- Set your own **marking scheme & negative marking**  
+- Customize **time limits and difficulty level**  
+- Full control to match your real exam pattern  
 
-### 🧠 Smart Scoring Engine  
-- MSQ (Multiple Select Questions) strict evaluation  
-- Input normalization for fair checking  
-- Precision-based negative marking  
-- Accurate and unbiased results  
+### 🧠 Smart Evaluation Engine  
+- Accurate scoring with support for **MSQ, numerical, and more**  
+- Fair evaluation with input normalization  
+- Precision-based result calculation  
 
-### 📊 Performance Analytics  
-- Subject-wise performance breakdown  
-- Time spent on each question  
-- Accuracy vs Speed insights  
-- Personalized improvement suggestions  
+### 📊 Performance Insights  
+- Get detailed **subject-wise analysis**  
+- Track **time spent per question**  
+- Understand your **accuracy vs speed**  
+- Improve with actionable insights  
+ 
 
 ### 🎨 User Experience  
 - Clean and modern UI  
