@@ -1,9 +1,7 @@
 import React, { createContext, useContext, useMemo, useState, useEffect } from 'react';
 
 const AuthContext = createContext(undefined);
-
 const STORAGE_KEY = 'auraxam_user';
-
 const starterBadges = [
   {
     id: 'starter',

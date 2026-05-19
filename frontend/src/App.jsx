@@ -3,6 +3,7 @@ import { AuthProvider } from './contexts/AuthContext';
 import { ThemeProvider } from './contexts/ThemeContext';
 import { Header } from './components/Header';
 import { Footer } from './components/Footer';
+import { MobileSidebar } from './components/MobileSidebar';
 import { Dashboard } from './components/Dashboard';
 import { ExamConfig } from './components/ExamConfig';
 import { LoginForm } from './components/LoginForm';
@@ -93,28 +94,29 @@ const AppContent = () => {
         onMenuToggle={handleMobileMenuToggle}
       />
       
-      {isMobileMenuOpen && (
-        <div className="fixed inset-0 z-40 md:hidden">
-          <div 
-            className="fixed inset-0 bg-black bg-opacity-50"
-            onClick={() => setIsMobileMenuOpen(false)}
-          ></div>
-          
-          <div className="fixed top-16 left-0 right-0 bg-white dark:bg-gray-800 border-b border-gray-200 dark:border-gray-700 shadow-lg">
-            <nav className="px-4 py-4 space-y-2">
-              <button onClick={() => handleRouteChange('dashboard')} className="w-full text-left px-4 py-3 rounded-lg">
-                Dashboard
-              </button>
-              <button onClick={() => handleRouteChange('exam-config')} className="w-full text-left px-4 py-3 rounded-lg">
-                New Exam
-              </button>
-              <button onClick={() => handleRouteChange('analytics')} className="w-full text-left px-4 py-3 rounded-lg">
-                Analytics
-              </button>
-            </nav>
-          </div>
-        </div>
-      )}
+      {/* 🌟 OLD MOBILE MENU REMOVED, SWAPPED IN YOUR COMPONENT HERE */}
+      <MobileSidebar 
+        isOpen={isMobileMenuOpen} 
+        onClose={() => setIsMobileMenuOpen(false)} 
+        onRouteChange={handleRouteChange}
+      />
+      
+      <main className="pt-16 flex-grow">
+        {currentRoute === 'dashboard' && (
+          <Dashboard onRouteChange={handleRouteChange} />
+        )}
+        
+        {currentRoute === 'exam-config' && (
+          <ExamConfig 
+            onExamStart={handleExamStart}
+            onRouteChange={handleRouteChange}
+          />
+        )}
+      </main>
+      
+      <Footer />
+    </div>
+  );
       
       <main className="pt-16 flex-grow">
         {currentRoute === 'dashboard' && (
