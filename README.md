@@ -193,7 +193,7 @@ This project and everyone participating in it is governed by the [Code of Conduc
 <table>
   <tr>
      <td>
-       <p align="center"> <img src="(https://github.com/mdazfar2/AuraXam/assets/100375390/10e99569-3759-4a3f-bd5a-dace2f2ab2a7" width="80%"></img>
+       <p align="center"> <img src="https://github.com/mdazfar2/AuraXam/assets/100375390/10e99569-3759-4a3f-bd5a-dace2f2ab2a7" width="80%"></img>
     </td>
     <td> 
       <img src="https://img.shields.io/badge/apache-license2.0-yellow.svg"/> <br> 
